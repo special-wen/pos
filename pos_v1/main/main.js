@@ -57,7 +57,7 @@ function allItemCount(item) {
     }
   }
   return item;
-  /*console.log(item)*/
+  //console.log(item)
 }
 
 //统计每个商品所需要支付的价格及优惠了的价格
