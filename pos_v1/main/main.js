@@ -56,6 +56,7 @@ function allItemCount(item) {
       }
     }
   }
+  return item;
   /*console.log(item)*/
 }
 
