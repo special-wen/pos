@@ -26,6 +26,7 @@ function buildItems(inputs) {
       cartItems.push({item:item,count:itemCount});
     }
   }
+  //console.log(cartItems);
   return cartItems;
 }
 
@@ -47,6 +48,7 @@ function allItemCount(cartItem) {
       }
     }
   }
+  //console.log(cartItem);
   return cartItem;
   //console.log(item)
 }
@@ -59,12 +61,13 @@ function earchItemPrice(item) {
   }
   for(let i = 0;i<item.length;i++){
     if(item[i].count > 0){
-      item[i].priceSave = item[i].countSave * item[i].price;
-      item[i].newPrice = item[i].newCount *item[i].price;
+      item[i].priceSave = item[i].countSave * item[i].item.price;
+      item[i].newPrice = item[i].newCount *item[i].item.price;
     }
   }
-  return item;
   console.log(item);
+  return item;
+
 }
 
 //统计所有商品的支付价格总和以及优惠了的价格
@@ -88,9 +91,9 @@ function outputItemPrice(item,total) {
   var str ='';
   for(let i = 0;i<item.length;i++){
     if(item[i].count>0){
-      str+= "名称：" + item[i].name +"，"+
-        "数量："+item[i].count+item[i].unit+"，"+
-        "单价："+item[i].price.toFixed(2)+"(元)"+"，"+
+      str+= "名称：" + item[i].item.name +"，"+
+        "数量："+item[i].count+item[i].item.unit+"，"+
+        "单价："+item[i].item.price.toFixed(2)+"(元)"+"，"+
         "小计："+item[i].newPrice.toFixed(2)+"(元)\n";
     }
   }
@@ -101,54 +104,6 @@ function outputItemPrice(item,total) {
     "**********************");
 }
 
-/*
 
-//测试点二
-function buildItems(inputs) {
-  var num=0;
-  let itemSpilt = new Array(), newItem = new Array(),itemCount = 0;
-  let item = loadAllItems();
-  for(let i = 0;i<item.length;i++){
-    item[i].count = 0;
-  }
-  for(let i = 0; i<inputs.length;i++){
-    if(inputs[i].length > 10){
-      itemSpilt = inputs[i].split("-");
-      itemCount = parseFloat(itemSpilt[1]);
-      if (itemSpilt[0] == "ITEM000001"){
-        item[1].count += itemCount;
-      }
-      if (itemSpilt[0] == "ITEM000003"){
-        item[3].count += itemCount;
-      }
-      else if(itemSpilt[0] == "ITEM000005"){
-        item[5].count += itemCount;
-      }
-    }
-    else{
-      if (inputs[i] == "ITEM000001")
-        item[1].count++;
-      if (inputs[i] == "ITEM000003")
-        item[3].count++;
-      if (inputs[i] == "ITEM000005")
-        item[5].count++;
-    }
-  }
-  for(let i = 0;i<item.length;i++){
-    if(item[i].count >0)
-      num++;
-  }
-  /!*console.log(num);*!/
 
-  for(let i = 0;i<item.length;i++){
-    // for(let j = 0;j<=num;j++){
-      if(item[i].count >0){
-        newItem.push({item:item[i]});
-        //console.log(newItem[j]);
-      }
-    // }
-  }
-  return newItem;
-}
-*/
 
