@@ -154,24 +154,4 @@ describe('item',()=> {
   });
 });
 
-/*
-//测试earchItemPrice
-describe('itemPrice',()=>{
-  let itemCount;
-  beforeEach(()=>{
-    itemCount = [
-    ({ barcode: 'ITEM000000', name: '可口可乐', unit: '瓶', price: 3, count: 0, countSave: 0, newCount: 0 }), ({ barcode: 'ITEM000001', name: '雪碧', unit: '瓶', price: 3, count: 5, countSave: 1, newCount: 4 }),
-    ({ barcode: 'ITEM000002', name: '苹果', unit: '斤', price: 5.5, count: 0, countSave: 0, newCount: 0 }),
-    ({ barcode: 'ITEM000003', name: '荔枝', unit: '斤', price: 15, count: 2, countSave: 0, newCount: 2 }),
-    ({ barcode: 'ITEM000004', name: '电池', unit: '个', price: 2, count: 0, countSave: 0, newCount: 0 }),
-    ({ barcode: 'ITEM000005', name: '方便面', unit: '袋', price: 4.5, count: 3, countSave: 1, newCount: 2 })
-  ];
-  });
-    it('should print correct itemCount message',()=>{
-      const priceAllItems = [
-        '方便面'
-      ];
-      expect(earchItemPrice(itemCount)).toEqual(priceAllItems);
-    });
- });
-*/
+
